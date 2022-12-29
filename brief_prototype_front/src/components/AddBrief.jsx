@@ -1,21 +1,22 @@
-import { useBriefState } from "../states/BriefState";
+import { useBriefState } from "../states/BriefState"
 
-export default function AddBrief() {
-
-    const briefs = useBriefState();
+export default function AddBriefs(){
+    
+    const briefs = useBriefState;
+   
+    
+   
     return (
         <>
-            <form action=""
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    briefs.add(e.target["brief"].value);
-                    e.target["brief"].value = "";
-                }}
-            >
-                <input type="text" name="brief" />
-                <input type="submit" />
-            </form>
-
+        <form onSubmit = { (e)=> {
+            e.preventDefault();
+            
+        } }>
+            <input type="text" name="title"/> <br />
+            <input type="text" name="description"/> <br />
+            <input type="float" name="duration" /> <br />
+            <button type="submit">save</button>
+        </form>
         </>
     )
 }

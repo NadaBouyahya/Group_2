@@ -15,4 +15,14 @@ class BriefController extends Controller
         $briefs = Brief::all();
         return response()->json($briefs);
     }
+
+    public function insert_brief(Request $req){
+        $briefs = new Brief();
+        $briefs->title = $req->title;
+        $briefs->description = $req->description;
+        $briefs->duration = $req->duration;
+
+        $briefs->save();
+        return $briefs;
+    }
 }

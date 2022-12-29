@@ -1,6 +1,13 @@
 import { useBriefState } from "../states/BriefState";
 import axios from 'axios';
 import { useEffect } from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from 'react-router-dom';
+
 
 export default function Briefs() {
     const briefs = useBriefState();
@@ -15,31 +22,28 @@ export default function Briefs() {
 
 
     return (
+        <>
+            <Link to={"/AddBriefs"}>ajouter un brief</Link>
+            <table>
+                <thead>
+                    <th>titre</th>
+                    <th>description</th>
+                    <th>durée</th>
+                </thead>
 
-        <table>
-            <thead>
-                <th>titre</th>
-                <th>description</th>
-                <th>durée</th>
-            </thead>
+                <tbody>
+                    {briefs.get().map((item) => (
+                        <tr>
+                            <td>{item.title}</td>
+                            <td>{item.description}</td>
+                            <td>{item.duration} jours</td>
+                        </tr>
+                    )
+                    )}
 
-            <tbody>
-                {briefs.get().map((item) => (
-                    <tr>
-                        <td>{item.title}</td>
-                        <td>{item.description}</td>
-                        <td>{item.duration} jours</td>
-                    </tr>
-                )
-                )}
-
-            </tbody>
-        </table>
-        // <ul>
-        //     {briefs.get().map((brief) => (
-        //         <li>{brief.title}</li>
-        //     )
-        //     )}
-        // </ul>
+                </tbody>
+            </table>
+        </>
     )
+
 }
