@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('apprentice_tasks', function (Blueprint $table) {
             $table->id();
+            $table->char('state')->nullable();
+            $table->dateTime('startDate');
+            $table->dateTime('endDate');
             $table->timestamps();
         });
     }

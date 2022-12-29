@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('apprentice_briefs', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('apprentice_id');
+            $table->bigInteger('brief_id');
+            $table->foreign('apprentice_id')->references('id')->on('apprentices');
+            $table->dateTime('dateAssignment');
             $table->timestamps();
         });
     }
