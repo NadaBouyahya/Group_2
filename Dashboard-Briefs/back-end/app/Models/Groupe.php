@@ -12,4 +12,8 @@ class Groupe extends Model
     public function trainingYears(){
         return $this->belongsTo(TrainingYear::class);
     }
+
+    public function apprentice(){
+        return $this->hasMany(Apprentice::class);
+    }
 }
