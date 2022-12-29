@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/briefs', [BriefController::class, 'Get_all_briefs']);
 
-Route::post('briefs', [TodoController::class, 'insert_briefs']);
+Route::post('/briefs', [BriefController::class, 'insert_brief']);
 

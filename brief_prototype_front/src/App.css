@@ -1,4 +1,29 @@
-.App {
+.table_brief {
+  width: 60%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid rgba(0, 105, 128, 0.897);
+
+}
+
+.table_brief thead th {
+    text-align: left;
+}
+
+
+.table_brief th,
+.table_brief td {
+  font-size: 20px;
+  border: 1px solid rgba(0, 105, 128, 0.897);
+  padding: 10px;
+}
+
+/* .table_brief tbody tr {
+  text-align: center;
+
+} */
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +60,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
