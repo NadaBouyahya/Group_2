@@ -16,9 +16,11 @@ class BriefFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->sentence(2);
+
         return [
-            'title' => $this->faker->unique()->word($maxNbChars=10),
-            'description' => $this->faker->text(),
+            'title' => $title,
+            'description' => $this->faker->paragraph(),
             'duration' => $this->faker->numberBetween(1, 30)
         ];
     }
