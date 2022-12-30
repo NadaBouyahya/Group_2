@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('training_years', function (Blueprint $table) {
+        Schema::create('trainingyears', function (Blueprint $table) {
             $table->id();
+            $table->string('trainingYear');
             $table->timestamps();
         });
     }

@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('groupes', function (Blueprint $table) {
+        Schema::create('briefs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->integer('duration');
+            $table->bigInteger('tutor_id')->unsigned()->nullable(); 
+            $table->foreign('tutor_id')->references('id')->on('tutors')
+            ->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groupes');
+        Schema::dropIfExists('briefs');
     }
 };

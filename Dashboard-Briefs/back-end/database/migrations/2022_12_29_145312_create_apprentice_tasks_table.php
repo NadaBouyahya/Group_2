@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('apprentice_tasks', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('apprentice_id')->unsigned();
+            $table->bigInteger('task_id')->unsigned();
+            $table->foreign('apprentice_id')->references('id')->on('apprentices')->onDelete('cascade');
+            $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
             $table->char('state')->nullable();
             $table->dateTime('startDate');
             $table->dateTime('endDate');
