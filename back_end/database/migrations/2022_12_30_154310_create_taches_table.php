@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('apprenant_groupes', function (Blueprint $table) {
+        Schema::create('taches', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('apprenant_id');
-            $table->bigInteger('groupe_id');
-            $table->foreign('apprenant_id')->references('id')->on('apprenant')->onDelete('cascade');
-            $table->foreign('groupe_id')->references('id')->on('groupes')->onUpdate('setNull');
+            $table->string('name');
+            $table->string('description');
+            $table->bigInteger('brief_id')->unsigned();
+            $table->foreign('brief_id')->references('id')->on('briefs')->onDelete('cascade');
+            $table->integer('duree');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apprenant_groupes');
+        Schema::dropIfExists('taches');
     }
 };
