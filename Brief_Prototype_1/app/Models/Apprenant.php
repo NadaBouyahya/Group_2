@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Apprenant extends Model
 {
     use HasFactory;
-    public $timestamps = false;
-
 }

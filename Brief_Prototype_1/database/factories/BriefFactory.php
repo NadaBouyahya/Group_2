@@ -19,9 +19,9 @@ class BriefFactory extends Factory
         $title = $this->faker->sentence(2);
 
         return [
-            'title' => $title,
+            'name' => $title,
             'description' => $this->faker->paragraph(),
-            'duration' => $this->faker->numberBetween(1, 30)
+            'duree' => $this->faker->numberBetween(1, 30)
         ];
     }
 }

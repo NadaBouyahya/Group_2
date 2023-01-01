@@ -1,28 +1,22 @@
-import { useBriefState } from "../states/BriefState";
-import axios from 'axios';
-import { useEffect } from "react";
-import {
-    // BrowserRouter as Router,
-    Routes,
-    Route,
-    Link
-} from 'react-router-dom';
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export default function Briefs() {
-    const briefs = useBriefState();
-
+export default function Tasks() {
+    const [taskData, setTask] = useState({ task: [] });
+    let params = useParams();
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/briefs").then((res) => {
-            console.log(res.data);
-            briefs.set(res.data)
+        axios.get("http://127.0.0.1:8000/api/briefs/" + params.id).then((response) => {
+            // console.log(response);
+            // console.log(response.data.task);
+            setTask(response.data);
         })
     }, [])
 
-
-
     return (
         <>
-            <Link to={"/AddBriefs"}>ajouter un brief</Link>
+            <Link to={"/AddBriefs"}>ajouter un tache</Link>
 
             <table className="table_brief">
                 <thead>
@@ -33,7 +27,7 @@ export default function Briefs() {
                 </thead>
 
                 <tbody className="">
-                    {briefs.get().map((item) => (
+                    {taskData.task.map((item) => (
                         <tr>
                             <td>{item.name}</td>
                             {/* <td>{item.description}</td> */}
@@ -41,8 +35,8 @@ export default function Briefs() {
                             <td>
                                 <a href="">suprimer</a>
                                 <a href="">modifier</a>
-                                <Link to={"brief/" + item.id + "/tasks"}>taches</Link>
-                                <a href=""> assigner</a>
+                                {/* <Link to={"brief/" + item.id + "/tasks"}>taches</Link> */}
+                                {/* <a href=""> assigner</a> */}
                             </td>
                         </tr>
                     )
@@ -54,5 +48,4 @@ export default function Briefs() {
 
         </>
     )
-
 }

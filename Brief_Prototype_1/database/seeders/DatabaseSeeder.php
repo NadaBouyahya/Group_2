@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Apprentice;
-use App\Models\Brief;
+use Database\Factories\anneeformationFactory;
+use Database\Factories\ApprenantFactory;
+use Database\Factories\formateurFactory;
 use Illuminate\Database\Seeder;
 
 
@@ -18,8 +19,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Brief::factory(5)->create();
-        Apprentice::factory(7)->create();
+        // formateurFactory::factory(7)->create();
+        anneeformationFactory::factory(3)->create();
+        ApprenantFactory::factory(5)->create();
+
 
 
         // \App\Models\User::factory(10)->create();

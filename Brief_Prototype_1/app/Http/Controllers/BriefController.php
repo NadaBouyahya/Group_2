@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brief;
+
 use Illuminate\Http\Request;
 
 class BriefController extends Controller
@@ -16,11 +17,17 @@ class BriefController extends Controller
         return response()->json($briefs);
     }
 
+    public function Get_brief_byID($id){
+        $briefs = Brief::where('id', $id )->first();
+        $briefs->Task;
+        return response()->json($briefs);
+    }
+
     public function insert_brief(Request $req){
         $briefs = new Brief();
-        $briefs->title = $req->title;
+        $briefs->name = $req->title;
         $briefs->description = $req->description;
-        $briefs->duration = $req->duration;
+        $briefs->duree = $req->duration;
 
         $briefs->save();
         return $briefs;

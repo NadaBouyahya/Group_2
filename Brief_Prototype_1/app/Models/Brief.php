@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Brief extends Model
 {
     use HasFactory;
-    public $timestamps = false;
 
+    public function Task() {
+        return $this->hasMany(Tache::class);
+    }
 }
