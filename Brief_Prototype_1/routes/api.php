@@ -26,6 +26,8 @@ Route::get('/briefs/{id}', [BriefController::class, 'Get_brief_byID']);
 
 
 Route::post('/briefs', [BriefController::class, 'insert_brief']);
+Route::put('/briefs', [BriefController::class, 'edit_brief']);
+
 
 
 // tasks

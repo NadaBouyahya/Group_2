@@ -40,7 +40,7 @@ export default function Briefs() {
                             <td>{item.duree} jours</td>
                             <td>
                                 <a href="">suprimer</a>
-                                <a href="">modifier</a>
+                                <Link to={"EditBrief/" + item.id}>modifier</Link>
                                 <Link to={"brief/" + item.id + "/tasks"}>taches</Link>
                                 <a href=""> assigner</a>
                             </td>

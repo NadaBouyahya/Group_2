@@ -16,6 +16,10 @@ export const useBriefState = () => {
 
         add: (obj)=>{
             return state.set((old)=>[...old, obj]);
+        },
+
+        edit: (obj)=>{
+            return state.set((old)=>[...old, obj]);
         }
     }
 }

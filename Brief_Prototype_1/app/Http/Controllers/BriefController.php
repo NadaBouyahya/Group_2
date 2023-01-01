@@ -32,4 +32,13 @@ class BriefController extends Controller
         $briefs->save();
         return $briefs;
     }
+
+    public function edit_brief (Request $req, $id) {
+        $brief = Brief::where('id', $id)->first();
+        $brief->name = $req->title;
+        $brief->description = $req->description;
+        $brief->duree = $req->duree;
+        $brief->save();
+        return $brief;
+    }
 }
