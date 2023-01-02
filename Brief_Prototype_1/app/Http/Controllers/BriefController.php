@@ -35,10 +35,14 @@ class BriefController extends Controller
 
     public function edit_brief (Request $req, $id) {
         $brief = Brief::where('id', $id)->first();
-        $brief->name = $req->title;
+        $brief->name = $req->name;
         $brief->description = $req->description;
         $brief->duree = $req->duree;
         $brief->save();
         return $brief;
+    }
+
+    public function delete_brief () {
+        
     }
 }
