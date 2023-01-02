@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 // briefs
 Route::get('/briefs', [BriefController::class, 'Get_all_briefs']);
 Route::get('/briefs/{id}', [BriefController::class, 'Get_brief_byID']);
@@ -27,11 +28,10 @@ Route::get('/briefs/{id}', [BriefController::class, 'Get_brief_byID']);
 
 Route::post('/briefs', [BriefController::class, 'insert_brief']);
 Route::put('/briefs/{id}', [BriefController::class, 'edit_brief']);
-
+Route::delete('/briefs/{id}', [BriefController::class, 'delete_brief']);
 
 
 // tasks
 Route::get('/tasks', [TachesController::class, 'Get_all_tasks']);
-
 Route::get('/tasks/{id}', [TachesController::class, 'Get_task_byID']);
 

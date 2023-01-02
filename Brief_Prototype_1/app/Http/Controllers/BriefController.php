@@ -42,7 +42,8 @@ class BriefController extends Controller
         return $brief;
     }
 
-    public function delete_brief () {
-        
+    public function delete_brief ($id) {
+        $brief = Brief::where('id', $id);
+        $brief->delete();
     }
 }
