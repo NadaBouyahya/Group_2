@@ -7,6 +7,9 @@ use App\Exports\TutorExport;
 
 use App\Models\Tutor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
+
 
 class TutorsController extends Controller
 {
@@ -26,21 +29,19 @@ class TutorsController extends Controller
     }
 
     public function insert_tutor(Request $req){
+
+        $file_name = $req->image->getClientOriginalName();
+        $file_path = 'upload/' . $file_name;
+
+        $path = Storage::disk('public')->put($file_path, file_get_contents($req->image));
+        
         $tutor = new Tutor();
         $tutor->firstname = $req->firstname;
         $tutor->lastname = $req->lastname;
         $tutor->email = $req->email;
+        $tutor->imgURL = $file_name;
 
         $tutor->save();
-
-        $req->validate([
-            'file' => 'required|mimes:png,gif,jpg,jpeg,bmp|max:2048',
-        ]);
-
-        $file_name = $req->file->getClientOriginalName();
-        $file_path = 'upload/' . $file_name;
-        
-  
         return redirect('/tutor');
     }
 
