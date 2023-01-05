@@ -32,16 +32,25 @@ class TutorsController extends Controller
         $tutor->email = $req->email;
 
         $tutor->save();
+
+        $req->validate([
+            'file' => 'required|mimes:png,gif,jpg,jpeg,bmp|max:2048',
+        ]);
+
+        $file_name = $req->file->getClientOriginalName();
+        $file_path = 'upload/' . $file_name;
+        
+  
         return redirect('/tutor');
     }
 
-    public function import(Request $req){
-        Excel::import(new TutorImport, $req->file);
-    }
+    // public function import(Request $req){
+    //     Excel::import(new TutorImport, $req->file);
+    // }
 
-    public function export(Request $req){
-        Excel::download(new TutorExport, $req->file);
-    }
+    // public function export(Request $req){
+    //     Excel::download(new TutorExport, $req->file);
+    // }
 
     public function edit_tutor (Request $req, $id) {
         $tutor = Tutor::where('id', $id)->first();
