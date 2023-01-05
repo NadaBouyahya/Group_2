@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
-
+    'providers' => [
+        Maatwebsite\Excel\ExcelServiceProvider::class, ],
+      'aliases' => [
+        'Excel' =>
+        Maatwebsite\Excel\Facades\Excel::class, ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -211,7 +215,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
+    
 
 
 ];
