@@ -36,7 +36,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
-       with font-awesome or any other icon font library -->
+            with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -170,7 +170,7 @@
                         </li>
                     </ul>
                 </li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tree"></i>
                         <p>
@@ -228,8 +228,8 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -263,8 +263,8 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
@@ -292,9 +292,9 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-header">EXAMPLES</li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-header">EXAMPLES</li>
+                <li class="nav-item"> --}}
                     <a href="pages/calendar.html" class="nav-link">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>
@@ -302,24 +302,24 @@
                             <span class="badge badge-info right">2</span>
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
+                {{-- </li> --}}
+                {{-- <li class="nav-item">
                     <a href="pages/gallery.html" class="nav-link">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Gallery
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="pages/kanban.html" class="nav-link">
                         <i class="nav-icon fas fa-columns"></i>
                         <p>
                             Kanban Board
                         </p>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-envelope"></i>
                         <p>
@@ -347,8 +347,8 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
@@ -418,8 +418,8 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-plus-square"></i>
                         <p>
@@ -547,8 +547,8 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-search"></i>
                         <p>
@@ -570,8 +570,8 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-header">MISCELLANEOUS</li>
+                </li> --}}
+                {{-- <li class="nav-header">MISCELLANEOUS</li>
                 <li class="nav-item">
                     <a href="iframe.html" class="nav-link">
                         <i class="nav-icon fas fa-ellipsis-h"></i>
@@ -626,8 +626,8 @@
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>Level 3</p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </li> --}}
+                                {{-- <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>Level 3</p>
@@ -668,7 +668,7 @@
                         <p>Informational</p>
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
         </nav>
         <!-- /.sidebar-menu -->
     </div>
