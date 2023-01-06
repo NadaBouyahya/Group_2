@@ -58,6 +58,11 @@
                 </tr> --}}
             </tfoot>
         </table>
+
+        <div class="d-flex  ">
+            {!! $tutors->links() !!}
+        </div>
+
     </div>
 @endsection
 

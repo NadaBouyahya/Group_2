@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Tutor extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'firstname',
+        'lastname',
+        'email',
+        'imgURL',
+    ];
+
     public function group()
     {
         return $this->belongsToMany(Group::class);

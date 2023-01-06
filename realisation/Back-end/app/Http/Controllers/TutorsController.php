@@ -18,7 +18,7 @@ class TutorsController extends Controller
     }
 
     public function Get_all_tutors(){
-        $tutors = Tutor::all();
+        $tutors = Tutor::simplePaginate(3);
         return view('tutor', compact('tutors'));
     }
 
@@ -48,7 +48,7 @@ class TutorsController extends Controller
         $tutor->imgURL = $file_name;
 
         $tutor->save();
-        return response()->json($tutor);
+        return redirect('tutors');
     }
 
     // public function import(Request $req){
