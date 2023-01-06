@@ -22,6 +22,7 @@ export default function AddTutor() {
             <input type="text" name="firstname" onChange={handleChange} value={form.firstname} />
             <input type="text" name="lastname" onChange={handleChange} value={form.lastname} />
             <input type="email" name="email" onChange={handleChange} value={form.email} />
+
             <input type="submit" name="submit"/>
         </form>
     )

@@ -30,19 +30,19 @@ class TutorsController extends Controller
 
     public function insert_tutor(Request $req){
 
-        $file_name = $req->image->getClientOriginalName();
-        $file_path = 'upload/' . $file_name;
+        // $file_name = $req->image->getClientOriginalName();
+        // $file_path = 'upload/' . $file_name;
 
-        $path = Storage::disk('public')->put($file_path, file_get_contents($req->image));
+        // $path = Storage::disk('public')->put($file_path, file_get_contents($req->image));
         
         $tutor = new Tutor();
         $tutor->firstname = $req->firstname;
         $tutor->lastname = $req->lastname;
         $tutor->email = $req->email;
-        $tutor->imgURL = $file_name;
+        // $tutor->imgURL = $file_name;
 
         $tutor->save();
-        return redirect('/tutor');
+        return response()->json($tutor);
     }
 
     // public function import(Request $req){

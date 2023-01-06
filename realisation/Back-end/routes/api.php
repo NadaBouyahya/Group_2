@@ -19,5 +19,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/tutors', [TutorsController::class, 'Get_all_tutors']);
+Route::get('/tutors/{id}', [TutorsController::class, 'Get_tutor_byID']);
+
 Route::post('/tutors', [TutorsController::class, 'insert_tutor']);
+
+Route::put('/tutors', [TutorsController::class, 'edit_tutor']);
+Route::delete('/tutors', [TutorsController::class, 'delete_tutor']);
+
+
 
