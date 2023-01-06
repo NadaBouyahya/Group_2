@@ -19,7 +19,7 @@ class TutorsController extends Controller
 
     public function Get_all_tutors(){
         $tutors = Tutor::all();
-        return response()->json($tutors);
+        return view('tutor', compact('tutors'));
     }
 
     public function Get_tutor_byID($id){
@@ -28,18 +28,24 @@ class TutorsController extends Controller
         return response()->json($tutor);
     }
 
+
+    public function Add_tutor_view(){
+        return view('Add-tutor');
+    }
+
+
     public function insert_tutor(Request $req){
 
-        // $file_name = $req->image->getClientOriginalName();
-        // $file_path = 'upload/' . $file_name;
+        $file_name = $req->image->getClientOriginalName();
+        $file_path = 'upload/' . $file_name;
 
-        // $path = Storage::disk('public')->put($file_path, file_get_contents($req->image));
+        $path = Storage::disk('public')->put($file_path, file_get_contents($req->image));
         
         $tutor = new Tutor();
         $tutor->firstname = $req->firstname;
         $tutor->lastname = $req->lastname;
         $tutor->email = $req->email;
-        // $tutor->imgURL = $file_name;
+        $tutor->imgURL = $file_name;
 
         $tutor->save();
         return response()->json($tutor);
@@ -65,5 +71,6 @@ class TutorsController extends Controller
     public function delete_tutor ($id) {
         $tutor = Tutor::where('id', $id);
         $tutor->delete();
+        return redirect('tutors');
     }
 }

@@ -26,16 +26,19 @@ Route::get('/tables', function () {
 //     return view('brief');
 // })->name('brief');
 
-Route::get('/tutor', function () {
-    return view('tutor');
-})->name('tutor');
+// Route::get('/tutor', function () {
+//     return view('tutor');
+// })->name('tutor');
 
-Route::get('/tutors', [TutorsController::class, 'Get_all_tutors']);
-Route::get('/tutor_byId/{id}', [TutorsController::class, 'Get_tutor_byID']);
+Route::get('/tutors', [TutorsController::class, 'Get_all_tutors'])->name('get_tutor');
+Route::get('/tutors/add', [TutorsController::class, 'Add_tutor_view'])->name('Add_tutor');
+
+Route::get('/tutor/{id}', [TutorsController::class, 'Get_tutor_byID']);
 
 
-Route::post('/insert_tutor', [TutorsController::class, 'insert_tutor']);
-Route::post('/tutor/{id}', [TutorsController::class, 'edit_tutor']);
-Route::get('/tutor/{id}', [TutorsController::class, 'delete_tutor']);
+Route::post('/insert_tutor', [TutorsController::class, 'insert_tutor'])->name('');
+Route::post('/tutor/{id}', [TutorsController::class, 'edit_tutor'])->name('edit_tutor');
+Route::get('/tutor/delete/{id}', [TutorsController::class, 'delete_tutor'])->name('delete_tutor');
+
 
 
