@@ -30,7 +30,9 @@ Route::get('/tables', function () {
 //     return view('tutor');
 // })->name('tutor');
 
-Route::get('/tutors', [TutorsController::class, 'Get_all_tutors'])->name('get_tutor');
+Route::get('/tutors', [TutorsController::class, 'GetMoreTutors'])->name('get_tutor');
+// Route::get('get-more-tutors', [TutorsController::class, 'GetMoreTutors'])->name('get-more-tutors');
+
 Route::get('/tutors/add', [TutorsController::class, 'Add_tutor_view'])->name('Add_tutor');
 
 Route::get('/tutor/{id}', [TutorsController::class, 'Get_tutor_byID']);
