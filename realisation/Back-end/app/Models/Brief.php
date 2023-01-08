@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Brief extends Model
 {
     use HasFactory;
+    
+    public function task()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function tutor() 
+    {
+        return $this->belongsTo(Tutor::class);
+
+    }
+
 }
