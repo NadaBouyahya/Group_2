@@ -47,7 +47,7 @@ class TutorsController extends Controller
     {
         $tutor = Tutor::where('id', $id)->first();
         // $tutor->Task;
-        return response()->json($tutor);
+        return view('Edit-tutor', compact('tutor'));
     }
 
 
@@ -83,14 +83,29 @@ class TutorsController extends Controller
     //     Excel::download(new TutorExport, $req->file);
     // }
 
+    // public function edit_view($id){
+    //     $tutor = Tutor::
+    // }
+
     public function edit_tutor(Request $req, $id)
     {
+
+        
         $tutor = Tutor::where('id', $id)->first();
         $tutor->firstname = $req->firstname;
         $tutor->lastname = $req->lastname;
         $tutor->email = $req->email;
+        if($req->image){
+            $file_name = $req->image->getClientOriginalName();
+            $file_path = 'upload/' . $file_name;
+    
+            $path = Storage::disk('public')->put($file_path, file_get_contents($req->image));
+            $tutor->imgURL = $file_name;
+        }
+
         $tutor->save();
-        return $tutor;
+        // return $tutor;
+        return view('Edit-tutor', compact('tutor'));
     }
 
     public function delete_tutor($id)

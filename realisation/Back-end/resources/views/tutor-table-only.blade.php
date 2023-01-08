@@ -43,7 +43,7 @@
                         <td>{{ $tutor->email }}</td>
                         <td>
                             <a href="{{ Route('delete_tutor', ['id' => $tutor->id]) }}"> delete </a>
-                            <a href="{{ Route('edit_tutor', ['id' => $tutor->id]) }}"> modifier </a>
+                            <a href="{{ Route('edit_tutor_view', ['id' => $tutor->id]) }}"> modifier </a>
                         </td>
                     </tr>
                 @endforeach
